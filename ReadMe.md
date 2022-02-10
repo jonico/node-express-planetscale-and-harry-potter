@@ -1,4 +1,4 @@
-# Harry Potter API with Node/Express and PlanetScale
+# Harry Potter API with Node/Express and PlanetScale - Trying to take magic away
 
 This is Node/Express project for a Harry Potter API with data stored in a PlanetScale MySQL database.
 
