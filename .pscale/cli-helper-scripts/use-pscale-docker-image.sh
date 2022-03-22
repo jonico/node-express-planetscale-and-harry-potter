@@ -6,8 +6,8 @@ function pscale {
     local non_interactive=""
     local command=""
     
-    # if first arg equals shell, we have to turn off pseudo-tty and set PSCALE_ALLOW_NONINTERACTIVE_SHELL=true
-    if [ "$1" = "shell" ]; then
+    # if first arg equals shell, and we are getting input piped in we have to turn off pseudo-tty and set PSCALE_ALLOW_NONINTERACTIVE_SHELL=true
+    if [ "$1" = "shell" ] &&  ! [[ -t 0 ]]; then
         tty=""
         non_interactive="-e PSCALE_ALLOW_NONINTERACTIVE_SHELL=true"
     fi
@@ -19,7 +19,7 @@ function pscale {
 
     # if NO_DOCKER is set, we will use the natively installed commands
     if [ -n "$NO_DOCKER" ]; then
-        command="pscale $@"
+        command="`which pscale` $@"
     else
         command="docker run -e PLANETSCALE_SERVICE_TOKEN=$PLANETSCALE_SERVICE_TOKEN -e PLANETSCALE_SERVICE_TOKEN_ID=$PLANETSCALE_SERVICE_TOKEN_ID -e PLANETSCALE_SERVICE_TOKEN_NAME=$PLANETSCALE_SERVICE_TOKEN_NAME -e HOME=/tmp -v $HOME/.config/planetscale:/tmp/.config/planetscale -e PSCALE_ALLOW_NONINTERACTIVE_SHELL=true --user $(id -u):$(id -g) --rm -i $tty planetscale/pscale:latest $@"
     fi
