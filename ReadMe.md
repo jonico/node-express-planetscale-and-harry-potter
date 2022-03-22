@@ -6,6 +6,22 @@ This is Node/Express project for a Harry Potter API with data stored in a Planet
 
 📺[ YouTube Tutorial](https://youtu.be/GyicOpBFUbw)
 
+# Let's try to remove all magic from Harry Potter 
+## 🪄🧙‍♀️ ➡️ 🙍‍♀️  🙍‍♂️ ⬅️ 🧙‍♂️🪄
+
+We are going to drop all :magic_wand: attributes from the Harry Potter character database and REST API :raised_eyebrow:
+
+<img width="643" alt="image" src="https://user-images.githubusercontent.com/1872314/159501031-b55406ed-3a5b-41de-896d-bf4e28a44398.png">
+
+Schema changes will be tested in an isolated database feature branch, reviewed and then deployed back to the production database.
+
+<img width="763" alt="image" src="https://user-images.githubusercontent.com/1872314/159504090-766e77c6-3631-49b8-9724-c38c6b8aeba6.png">
+
+Once the corresponding code and database changes are deployed, only real :rewind: :magic_wand: could bring them back.
+
+![image](https://user-images.githubusercontent.com/1872314/159502563-a0e0e117-9597-44aa-b670-a773206c72e1.png)
+
+
 ## How to Use
 
 Clone the repository.
